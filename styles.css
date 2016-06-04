@@ -1,0 +1,93 @@
+* {
+    font-family: Garamond, Georgia, serif;
+}
+
+.navbar.navbar-default {
+    border-radius: 0;
+    border: 0px;
+}
+
+.page-header {
+    margin: 0;
+}
+
+.btn:focus {
+    color: white;
+}
+
+.row {
+    margin: 0;
+}
+
+.btn:hover {
+    background-color: #629843;
+    color: white;
+}
+
+.well {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-secondary {
+    border: 1px solid #216C2A;
+}
+
+.selected {
+    color: white;
+    background-color: #85bb65;
+    outline: none;
+}
+
+.row {
+    background-color: white;
+}
+
+h1 {
+    color: #216C2A;
+}
+
+.navbar-right {
+    font-size: 2em;
+    padding: 4px;
+}
+
+ul.nav.navbar-nav.navbar-right a:hover {
+    color: white;
+}
+
+ul.nav.navbar-nav.navbar-right a{
+    color: #216C2A;
+}
+
+.navbar-right li {
+    display: inline-block;
+}
+
+.navbar-right {
+    white-space: nowrap;
+}
+
+nav.navbar.navbar-default {
+    background-color: darkgray;
+}
+
+.container-fluid ul {
+    font-size: 1.5em;
+}
+
+.navbar-header h1 {
+    font-size: 3em;
+    margin-top: 5px;
+}
+
+#info h1 {
+    text-align: center;
+}
+
+#info p {
+    max-width: 600px;
+    margin: 1em auto;
+}
+

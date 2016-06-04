@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>FIRE Calculator</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link type="text/css" href="styles.css" rel="stylesheet">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="page-header">
+            <div class="container">
+                <h1>FIRE Calculator <small>Financial Independence/Early Retirement</small></h1>
+            </div>
+        </div>
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#">Method</a></li>
+                    <li><a href="#">Further Reading</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <div class="container" id="calculator">
+        <div class="row text-center" id="row">
+            <div class="btn-group btn-group-md" role="group" id="calc-type">
+                <button type="button" class="btn btn-secondary type-button" id="time-to-retire">Time To Retirement</button>
+                <button type="button" class="btn btn-secondary type-button" id="max-expenses">Maximum Annual Expenses</button>
+                <button type="button" class="btn btn-secondary type-button" id="req-income">Required Income</button>
+                <button type="button" class="btn btn-secondary type-button" id="retirement-worth">Net Worth At Retirement</button>
+            </div>
+        </div>
+        <br>
+        <form role="form" id="calc-inputs">
+            <div class="row">
+            <div class="col-lg-6">
+
+                <div class="form-group">
+                    <label for="worth">Current Net Worth: <i>($)</i> &nbsp;<input type="radio" name="posneg" value="positive" id="positive" checked> Positive
+                        <input type="radio" name="posneg" value="negative" id="negative"> Negative</label>
+                    <input type="number" class="form-control" id="worth" value="form" disabled>
+                </div>
+                <div class="form-group">
+                    <label for="expenses">Annual Household Expenses: <i>($)</i></label>
+                    <input type="number" class="form-control" id="expenses" disabled>
+                </div>
+
+            </div>
+            <div class="col-lg-6">
+
+                <div class="form-group">
+                    <label for="income">Annual Household Income: <i>($)</i> &nbsp;<input type="radio" name="marital" value="single" id="single" checked> Single
+                        <input type="radio" name="marital" value="married" id="married"> Married</label>
+                    <input type="number" class="form-control" id="income" disabled>
+                </div>
+                <div class="form-group">
+                    <label for="retire">Desired Time to Retirement: <i>(Years)</i></label>
+                    <input type="number" class="form-control" id="retire" disabled>
+                </div>
+            </div>
+            </div>
+        </form>
+        <div class="row">
+            <div class="text-center">
+                <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-secondary" id="calculate">Calculate</button>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="text-center well well-small">
+            <p id="output">Output</p>
+        </div>
+        </div>
+    <div class="container" id="info">
+        <h1>Method</h1>
+        <p>Planning for retirement is essentially a closed system. Given three of the four parameters above, it is possible
+        to solve for the fourth. That is not to say that there are not other factors that will affect retirement though. For instance, if you were
+         to suddenly inherit a small fortune, that will obviously affect your options. This calculator should instead be
+        used as a rule of thumb and a way to tinker with your financial situation and see how that affects your options.</p>
+        <p>Overall, this is a slightly conservative estimate. It assumes an <b>8% annual return</b> in the stock market. Since inception, the stock market
+         has provided an annualized return of 10.12%, and over the last 20 and 25 years, the stock market has returned 9.86% and 9.62% respectively.
+        So, it would seem safe to estimate at least a 9.5% return, and it probably is, but this doesn't account for bad luck. At times the 10-year annualized
+        return has dipped below 0% and the 15-year annualized return have come dangerously close. This calculator obviously cannot predict the stock market, instead
+         it aims to insure financial security is the maximum percentage of environments. Therefore, 8% is used instead of 9.5%.</p>
+        <p>Inflation becomes a little more difficult to calculate. This calculator assumes <b>3.5% annual inflation</b>. The average since the US government began tracking
+         it in 1913 has been 3.22%. However, inflation actualy appears to be less sporadic than the stock market. One would think that makes it easier to find a safe estimate,
+         but because our portfolios may only exist for twenty or thirty years, the inflation could be negative for their entire life span or as high as 5%. Again, this calculator
+         assumes a slightly more conservative average to insure that a portfolio will survive the maximum percentage of environments. After subtracting annual inflation from annual
+         returns, we arrive at the <b>4.5% annual rate of return</b> that is used.</p>
+        <p>The caclulator also assumes a <b>safe withdrawal rate of 4%.</b> Personally, I consider this a very safe withdrawal rate. Maybe the only estimate I consider
+        too conservative in this calculator, and also the number that affects the calculations the most. If you take as a fact that a portolio will have a real return of 4.5%
+         and a withdrawal rate of 4%, you will actually have more money at the end of your life than your retired with. If your goal is to pass away with $0 in the bank, you could
+         probably withdrawal more than that.</p>
+        <h1>Further Reading</h1>
+        <p><a href="http://blog.petetheplanner.com/what-rate-of-return-should-you-expect-on-your-investments/">Expected Rate of Return in the Stock Market</a></p>
+        <p><a href="http://inflationdata.com/Inflation/Inflation_Rate/Long_Term_Inflation.asp">Annual Inflation</a></p>
+        <h1>Contact</h1>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="   crossorigin="anonymous"></script>
+    <script src="js.js"></script>
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+</body>
+</html>
