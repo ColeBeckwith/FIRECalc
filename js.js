@@ -43,7 +43,15 @@ $(document).ready(function() {
         $('#calc-type button').removeClass('selected');
         $(this).addClass("selected");
         $('#calculator input').prop('disabled', false);
-        selected($timeToRetire)?disable($retire):selected($maxExpenses)?disable($expenses):selected($reqIncome)? disable($income) : false;
+        if (selected($timeToRetire)){
+            disable($retire);
+        }
+        if (selected($maxExpenses)){
+            disable($expenses);
+        }
+        if (selected($reqIncome)){
+            disable($income);
+        }
     });
 
     $('#calculate').on('click', function(){
@@ -62,14 +70,14 @@ $(document).ready(function() {
         var worth = $('#positive').is(':checked')?getValue($worth):((getValue($worth))*-1);
         var initial = worth;
         if ($timeToRetire.hasClass('selected')) {
-            var B = 0;
+            var maxOut = 0;
             if (!error(expenses+worth+income)) {
-                var target = expenses/.04;
-                while (initial<target && B < 100) {
+                var targetWorth = expenses/.04;
+                while (initial<targetWorth && maxOut < 100) {
                     initial = ((initial * 1.045) + savings);
-                    B++;
+                    maxOut++;
                 }
-                if (B === 100) {
+                if (maxOut === 100) {
                     output("In your current financial situation, retirement may be difficult. See below for possible solutions.")
                 } else {
                     $retire.val(B);
@@ -94,7 +102,7 @@ $(document).ready(function() {
         if (selected($('#retirement-worth'))) {
             if (!error(income+retirement+expenses+worth)) {
                 for (i=0; i<retirement; i++) {
-                    worth = (worth*1.045)+(savings);
+                    worth=(worth*1.045)+(savings);
                 }
                 output("Your net worth at retirement, in "+(year+retirement)+", will be $"+worth.toFixed(0)+'.')
             }
