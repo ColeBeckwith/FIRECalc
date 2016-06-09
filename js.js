@@ -74,9 +74,37 @@ $(document).ready(function () {
 		var expenses = getValue($expenses);
 		var retirement = getValue($retire);
 		if ($married.is(':checked')) {
-			tax = income > 466951 ? (0.4 * (income - 466951) + 130828) : income > 411500 ? (0.35 * (income - 411500) + 111324) : income > 230450 ? (0.33 * (income - 230450) + 51577) : income > 151201 ? (0.28 * (income - 151201) + 29387) : income > 74900 ? (0.25 * (income - 74900) + 10312) : income > 18451 ? (0.15 * (income - 18451) + 1845) : (0.1 * income);
+			if (income > 466951) {
+				tax = (0.4 * (income - 466951) + 130828);
+			} else if (income > 411500) {
+				tax = (0.35 * (income - 411500) + 111324);
+			} else if (income > 230450) {
+				tax = (0.33 * (income - 230450) + 51577);
+			} else if (income > 151201) {
+				tax = (0.28 * (income - 151201) + 29387);
+			} else if (income > 74900) {
+				tax = (0.25 * (income - 74900) + 10312);
+			} else if (income > 18451) {
+				tax = (0.15 * (income - 18451) + 1845);
+			} else {
+				tax = (.1 * income);
+			}
 		} else {
-			tax = income > 413201 ? (0.4 * (income - 413201) + 119996) : income > 411500 ? (0.35 * (income - 411500) + 119401) : income > 189300 ? (0.33 * (income - 189300) + 46075) : income > 90750 ? (0.28 * (income - 90750) + 18481) : income > 37450 ? (0.25 * (income - 37450) + 5156) : income > 9226 ? (0.15 * (income - 9226) + 922) : (0.1 * income);
+			if (income > 413201) {
+				tax = (0.4 * (income - 413201) + 119996);
+			} else if (income > 411500) {
+				tax = (0.35 * (income - 411500) + 119401);
+			} else if (income > 189300) {
+				tax = (0.33 * (income - 189300) + 46075);
+			} else if (income > 90750) {
+				tax = (0.28 * (income - 90750) + 18481);
+			} else if (income > 37450) {
+				tax = (0.25 * (income - 37450) + 5156);
+			} else if (income > 9226) {
+				tax = (0.15 * (income - 9226) + 922);
+			} else {
+				tax = (0.1 * income);
+			}
 		}
 		var taxedIncome = 0.93 * (income - tax);
 		var savings = taxedIncome - expenses;
