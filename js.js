@@ -80,8 +80,8 @@ $(document).ready(function() {
                 if (maxOut === 100) {
                     output("In your current financial situation, retirement may be difficult. See below for possible solutions.")
                 } else {
-                    $retire.val(B);
-                    output("With an annual income of $" + taxedIncome.toFixed(0) + " after tax, and $" + expenses + " in expenses, you will be able to retire in " + (B) + " years, in " + (year + B) + ".");
+                    $retire.val(maxOut);
+                    output("With an annual income of $" + taxedIncome.toFixed(0) + " after tax, and $" + expenses + " in expenses, you will be able to retire in " + maxOut + " years, in " + (year + maxOut) + ".");
                 }
             }
         }
