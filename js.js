@@ -47,12 +47,6 @@ $(document).ready(function () {
 	var $calcButton = $('#calc-type button');
 
 	$calcButton.on('click', function () {
-
-		/**
-		 * Look at the jQuery toggleClass method for additional and potentially more optimal ways of handling
-		 * the the removal and addition of classes for the buttons below.
-		 */
-
 		$calcButton.removeClass('selected');
 		$(this).addClass("selected");
 		$('#calculator input').prop('disabled', false);
